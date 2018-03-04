@@ -27,6 +27,14 @@ public class Course {
     @ColumnInfo(name = "end_at")
     private String endAt;
 
+    public Course(String id, String name, String courseCode, String startAt, String endAt) {
+        this.id = id;
+        this.name = name;
+        this.courseCode = courseCode;
+        this.startAt = startAt;
+        this.endAt = endAt;
+    }
+
     public String getId() {
         return id;
     }
