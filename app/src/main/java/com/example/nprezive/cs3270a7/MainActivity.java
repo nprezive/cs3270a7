@@ -20,16 +20,21 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fm = getSupportFragmentManager();
-        fabAdd = findViewById(R.id.fabAdd);
 
+        //main view of the app: course list
+        fm.beginTransaction()
+                .replace(R.id.frameMainActivity, new FragmentCourseList(), "fragCourseList")
+                .commit();
+
+        //fabAdd onclicklistener
+        fabAdd = findViewById(R.id.fabAdd);
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fm.beginTransaction()
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .add(R.id.frameMainActivity,
-                                new FragmentCourseEdit(),
-                                "fragCourseEdit")
+                        .add(android.R.id.content,
+                                new FragmentCourseEdit())
                         .addToBackStack(null)
                         .commit();
             }
