@@ -9,4 +9,6 @@
     <string name="start_at">Start At</string>
     <string name="end_at">End At</string>
     <string name="fields_cannot_be_blank">Fields cannot be blank</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -1,11 +1,11 @@
 package com.example.nprezive.cs3270a7;
 
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.nprezive.cs3270a7.db.Course;
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tbMainActivity);
+        setSupportActionBar(toolbar);
         fm = getSupportFragmentManager();
 
         //main view of the app: course list
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onFragmentCourseListInteraction(Course course) {
-        //TODO: Show course detail view
+        fm.beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .add(android.R.id.content, new FragmentCourseView())
+                .addToBackStack(null)
+                .commit();
     }
 }
