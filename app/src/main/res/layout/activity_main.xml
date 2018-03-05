@@ -7,14 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.nprezive.cs3270a7.MainActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <FrameLayout
+        android:id="@+id/frameMainActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <FrameLayout
-            android:id="@+id/frameMainActivity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </android.support.v4.widget.NestedScrollView>
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAdd"
